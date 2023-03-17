@@ -9,12 +9,12 @@ import {
 import {useToggle} from '../hooks/use-toggle.hook';
 
 const PasswordInput = props => {
-  const {label, error} = props;
+  const {label, error, placeholder} = props;
   const [showPassword, togglePassword] = useToggle();
 
   return (
     <View>
-      <Text>{label}</Text>
+      <Text style={{color: '#000000'}}>{label}</Text>
       <View style={styles.wrapper}>
         <View
           style={[
@@ -23,8 +23,9 @@ const PasswordInput = props => {
           ]}>
           <TextInput
             style={styles.input}
-            type={showPassword ? 'text' : 'password'}
-          />
+            type={showPassword ? 'text' : 'password'}>
+            {placeholder}
+          </TextInput>
         </View>
         <TouchableOpacity
           onPress={() => togglePassword()}
@@ -57,6 +58,7 @@ const styles = StyleSheet.create({
     fontSize: 16,
     width: '80%',
     height: 47,
+    color: '#000000',
   },
   toggle: {
     backgroundColor: '#e9ecef',

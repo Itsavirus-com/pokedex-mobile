@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import {StyleSheet, Button, View, Image, Text} from 'react-native';
 import Input from '../components/input';
 import PasswordInput from '../components/password-input';
@@ -21,10 +21,22 @@ const Login = ({navigation}) => {
             error={{message: 'Error message example'}}
           />
           <View style={styles.button}>
+            <View style={styles.button2}>
+              <Button
+                title={'Login'}
+                onPress={() =>
+                  navigation.navigate('pokemon-list', {
+                    itemId: 86,
+                    otherParam: 'anything you want here',
+                  })
+                }
+              />
+            </View>
+
             <Button
               title={'Login'}
               onPress={() =>
-                navigation.navigate('pokemon-list', {
+                navigation.navigate('pokemon-details', {
                   itemId: 86,
                   otherParam: 'anything you want here',
                 })
@@ -69,6 +81,9 @@ const styles = StyleSheet.create({
   logo_text: {fontSize: 20, color: 'white'},
   button: {
     marginTop: 30,
+    marginBottom: 10,
+  },
+  button2: {
     marginBottom: 10,
   },
 });
