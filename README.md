@@ -29,7 +29,7 @@ And then run the app to device:
 
 ```sh
 Android: yarn android
-iOS: yarn android
+iOS: yarn ios
 ```
 
 The script above will start the app on selected emulator or connected device that you targeted.
