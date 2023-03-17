@@ -12,8 +12,6 @@ const PasswordInput = props => {
   const {label, error} = props;
   const [showPassword, togglePassword] = useToggle();
 
-  console.log('showPassword', showPassword);
-
   return (
     <View>
       <Text>{label}</Text>
